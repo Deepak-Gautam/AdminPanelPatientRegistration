@@ -9,26 +9,28 @@
 </head>
 
 <body>
-    <div class="container mt-5">
-        <div class="card">
-            <div class="card-header text-center">Entery Form</div>
-            <div class="card-body">
-                <form [formGroup]="form" (ngSubmit)="makeEntry()">
-                    <div class="form-group">
-                        <label for="Code">Please enter the Code</label>
-                        <input type="text" class="form-control" formControlName="code">
-                        <div *ngIf="form.controls.code.touched 
-                        && !form.controls.code.valid" class="alert alert-danger">
-                            Code is required
+    <section class="homepage">
+        <div class="container mt-5">
+            <div class="card ">
+                <div class="card-header text-center">Entery Form</div>
+                <div class="card-body">
+                    <form [formGroup]="form" (ngSubmit)="onBtnCLick()">
+                        <div class="form-group">
+                            <label for="Code">Please enter the Code</label>
+                            <input type="text" class="form-control" formControlName="code">
+                            <p *ngIf="form.controls.code.touched 
+                            && !form.controls.code.valid" class="missing-field-alert">
+                                Code is required
+                            </p>
                         </div>
-                    </div>
+                        <app-button type="submit" color="#19a5a2" text="Go to Dashboard"></app-button>
 
-                    <button class="btn btn-primary" type="submit">Submit</button>
-                </form>
+                    </form>
+                </div>
             </div>
-            <div class="card-footer">Footer</div>
+
         </div>
-    </div>
+    </section>
 </body>
 
 </html>

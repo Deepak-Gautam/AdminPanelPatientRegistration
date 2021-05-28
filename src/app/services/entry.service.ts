@@ -1,11 +1,12 @@
-import { Injectable } from "@angular/core";
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root',
 })
 export class EntryService {
-  entry(code:string) {
-    if(code=== "sitecore123") {
+  entry(code: string) {
+    console.log('fsdfsdf');
+    if (code === 'sitecore123') {
       return true;
     } else {
       return false;
