@@ -8,6 +8,7 @@ import { AboutComponent } from "./components/about/about.component";
 import { HomeComponent } from "./components/home/home.component";
 import { ButtonComponent } from './components/button/button.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     AboutComponent,
     HomeComponent,
     ButtonComponent,
-    DashboardComponent
+    DashboardComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
