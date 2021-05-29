@@ -1,17 +1,17 @@
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Entrycode } from '../models/entrycode';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
 })
 export class EntryService {
   isLoggedIn = false;
-  entry(code: string) {
-    if (code === 'sitecore123') {
-      this.isLoggedIn = true;
-      return true;
+  constructor(private http: HttpClient) {}
+  private apiUrl = 'api/users';
 
-    } else {
-      return false;
-    }
+  entry():Observable<Entrycode[]> {
+    return this.http.get<Entrycode[]>(this.apiUrl);
   }
 }

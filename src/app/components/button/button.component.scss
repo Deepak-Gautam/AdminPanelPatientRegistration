@@ -1,8 +1,9 @@
+@import url("../../../styles.scss");
 .primary-button {
   margin-top: 20px;
-  border: 1px solid #19a5a2;
-  background-color: #19a5a2;
-  color: #fff;
+  border: 1px solid var(--border);
+  background-color: var(--border);
+  color: var(--white);
   opacity: 1;
   transition: opacity 0.5s;
   padding: 10px 20px 12px 20px;

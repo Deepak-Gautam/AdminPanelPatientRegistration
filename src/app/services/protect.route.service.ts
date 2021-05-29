@@ -5,7 +5,7 @@ import { EntryService } from './entry.service';
 @Injectable({
   providedIn: 'root',
 })
-export class ProtectRouute implements CanActivate {
+export class ProtectRoute implements CanActivate {
   constructor(private _entryService: EntryService, private _router: Router) {}
   canActivate() {
     if (this._entryService.isLoggedIn) {
