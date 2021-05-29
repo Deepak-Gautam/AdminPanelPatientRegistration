@@ -5,7 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class EntryService {
   entry(code: string) {
-    console.log('fsdfsdf');
     if (code === 'sitecore123') {
       return true;
     } else {
