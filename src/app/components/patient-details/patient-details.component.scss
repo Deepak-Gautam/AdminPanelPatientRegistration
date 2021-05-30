@@ -14,5 +14,14 @@ section.patient-details {
         color: var(--border);
       }
     }
+    .edit-section {
+      width: 200px;
+      float: right;
+    }
+  }
+}
+@media screen and (max-width: 400px) {
+  .edit-section {
+    padding: 100px;
   }
 }

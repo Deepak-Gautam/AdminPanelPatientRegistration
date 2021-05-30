@@ -1,0 +1,13 @@
+@import url("../../../styles.scss");
+section.new-registration {
+  input {
+    padding: 15px;
+    width: 100%;
+    font-size: 17px;
+    font-family: Raleway;
+    background: var(--orgb);
+  }
+  .required {
+    color: var(--red);
+  }
+}

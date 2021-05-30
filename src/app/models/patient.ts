@@ -1,10 +1,10 @@
 export interface Patient {
   id: number;
   firstName: string;
-  lastName: string;
+  lastName?: string;
   address: string;
-  appointmentDate: Date;
+  appointmentDate: string;
   assignedTo: string;
-  reason: string;
-  caseDescription: string;
+  reason?: string;
+  caseDescription?: string;
 }

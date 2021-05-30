@@ -43,6 +43,7 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
     const users: Object = [{ id: 1 + Math.random(), code: 'sitecore123' }];
+    
     return { patients, users };
   }
   genId(patients: Patient[]): number {

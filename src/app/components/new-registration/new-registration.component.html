@@ -1,1 +1,57 @@
-<p>new-registration works!</p>
+<section class="new-registration">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6  offset-md-3">
+                <form [formGroup]="form" (ngSubmit)="onBtnCLick()">
+                    <div class="form-group">
+                        <label>First Name <span class="required">*</span></label>
+                        <input type="text" formControlName="firstName" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Last Name </label>
+                        <input [(ngModel)]="lastName" type="text" class="form-control" formControlName="lastName">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address <span class="required">*</span></label>
+                        <input type="text" formControlName="address" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.address.errors }" />
+                        <div *ngIf="submitted && f.address.errors" class="invalid-feedback">
+                            <div *ngIf="f.address.errors.required">Address is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="appointmentDate">Appointment Date <span class="required">*</span></label>
+                        <input placeholder="Day & time" type="text" formControlName="appointmentDate"
+                            class="form-control" [ngClass]="{ 'is-invalid': submitted && f.appointmentDate.errors }" />
+                        <div *ngIf="submitted && f.appointmentDate.errors" class="invalid-feedback">
+                            <div *ngIf="f.appointmentDate.errors.required">Appointment Date is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="assignedTo">Select Doctor <span class="required">*</span></label>
+                        <input type="text" formControlName="assignedTo" class="form-control"
+                            [ngClass]="{ 'is-invalid': submitted && f.assignedTo.errors }" />
+                        <div *ngIf="submitted && f.assignedTo.errors" class="invalid-feedback">
+                            <div *ngIf="f.assignedTo.errors.required">Assign doctor is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Reason</label>
+                        <input [(ngModel)]="reason" type="text" class="form-control" formControlName="reason">
+                    </div>
+                    <div class="form-group">
+                        <label for="caseDescription">Case Description</label>
+                        <input [(ngModel)]="caseDescription" type="text" class="form-control"
+                            formControlName="caseDescription">
+                    </div>
+                    <app-button type="submit" color="#19a5a2" text="Register"></app-button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>

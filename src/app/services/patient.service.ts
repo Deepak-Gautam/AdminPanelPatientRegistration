@@ -36,6 +36,15 @@ export class PatientService {
         )
       );
   }
+  newRegistration(patient: Patient): Observable<Patient> {
+    return this._http
+      .post<Patient>(this.apiUrl, patient, this.httpOptions)
+      .pipe(
+        catchError(
+          this._errorhandling.handleError<Patient>('new registration error')
+        )
+      );
+  }
   searchPatient(value: string): Observable<Patient[]> {
     if (!value.trim) {
       return of([]);
