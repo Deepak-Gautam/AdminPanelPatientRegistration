@@ -8,14 +8,14 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class EntryService {
-  isLoggedIn = false;
+  isLoggedIn: boolean = false;
   constructor(private http: HttpClient) {}
   private apiUrl = 'api/users';
 
-  entry():Observable<Entrycode[]> {
+  entry(): Observable<Entrycode[]> {
     return this.http.get<Entrycode[]>(this.apiUrl).pipe(
-      catchError((err)=>{
-        console.log("error found in entry service")
+      catchError((err) => {
+        console.log('error found in entry service');
         console.log(err);
         return throwError(err);
       })

@@ -4,7 +4,8 @@ import { EntryService } from '../../services/entry.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
 import { Entrycode } from '../../models/entrycode';
-import { map } from 'rxjs/operators';
+import { Subscription } from 'rxjs';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -12,6 +13,8 @@ import { map } from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
   users: Entrycode[] = [];
+  isloading: boolean = true;
+  errorMessage: string = '';
   isLoggedIn: boolean = false;
   form: FormGroup;
   constructor(
@@ -25,10 +28,22 @@ export class HomeComponent implements OnInit {
     });
   }
   ngOnInit() {
-    this._entryService.entry().subscribe((users) => (this.users = users));
+    this.getUsers();
+  }
+  getUsers() {
+    this._entryService.entry().subscribe(
+      (users) => {
+        this.users = users;
+      },
+      (error) => {
+        console.error('error caught on subscribing user data');
+        this.errorMessage = error;
+        this.isloading = false;
+      }
+    );
   }
 
-  onBtnCLick() {
+  onBtnCLick(): void {
     var result = this.users.find(
       (code) => code.code === this.form.controls['code'].value
     );

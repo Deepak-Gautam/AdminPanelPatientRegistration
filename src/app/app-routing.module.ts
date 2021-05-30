@@ -9,7 +9,7 @@ const routes: Routes = [
   {
     path: "dashboard",
     component: DashboardComponent,
-    canActivate: [ProtectRoute],
+    // canActivate: [ProtectRoute],
   },
   { path: "**", component: PageNotFoundComponent },
 ];
