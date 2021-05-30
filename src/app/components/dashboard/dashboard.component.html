@@ -1,34 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
+<section class="patient-list mt-5">
+    <div class="container">
+        <app-search></app-search>
+        <div class="row">
+            <div class="col-md-4 mt-2" *ngFor="let patient of patientsList" id="list-values">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title text-center ">{{patient.firstName}}{{patient.lastName}}</h5>
+                        <ul class="card-text ">
+                            <li> <strong>Case</strong> :{{patient.reason}}</li>
+                            <li><strong>Assigned To</strong> :{{patient.assignedTo}}</li>
+                            <li> <strong>Appointment Date</strong>:{{patient.appointmentDate}}</li>
+                            <app-button text="See Details" (onBtnCLick)="getId(patient.id)" class="button-dashboard">
+                            </app-button>
+                        </ul>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-    <title>Admin Panel</title>
-</head>
-
-<body>
-    <section class="patient-list mt-5">
-        <div class="container">
-            <app-search></app-search>
-            <div class="row">
-                <div class="col-md-4 mt-2" *ngFor="let patient of patientsList" id="list-values">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title text-center ">{{patient.firstName}}{{patient.lastName}}</h5>
-                            <ul class="card-text ">
-                                <li> <strong>Case</strong> :{{patient.reason}}</li>
-                                <li><strong>Assigned To</strong> :{{patient.assignedTo}}</li>
-                                <li> <strong>Appointment Date</strong>:{{patient.appointmentDate}}</li>
-                            </ul>
-                            <app-button text="See Details"></app-button>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-</body>
-
-</html>
+    </div>
+</section>

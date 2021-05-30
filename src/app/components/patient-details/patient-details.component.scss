@@ -1,0 +1,18 @@
+section.patient-details {
+  .card {
+    border: unset;
+    max-width: 1200px;
+    .case-history {
+      text-align: center;
+      ul {
+        padding: unset;
+        li {
+          list-style-type: none;
+        }
+      }
+      h1 {
+        color: var(--border);
+      }
+    }
+  }
+}

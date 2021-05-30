@@ -9,7 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const patients: Object = [
       {
-        patientNo: 11,
+        id: 11,
         firstName: 'Deepak',
         lastName: ' Gautam',
         address: 'Lysalleen 526 Trekroner',
@@ -20,7 +20,7 @@ export class InMemoryDataService implements InMemoryDbService {
           'Mr. deepak is suffering from high fever and headache. He also have some symptioms of Covid--19',
       },
       {
-        patientNo: 12,
+        id: 12,
         firstName: 'Anina',
         lastName: ' Mahat',
         address: 'Roskilde',
@@ -31,7 +31,7 @@ export class InMemoryDataService implements InMemoryDbService {
           'Mr. deepak is suffering from high fever and headache. He also have some symptioms of Covid--19',
       },
       {
-        patientNo: 11,
+        id: 13,
         firstName: 'Deepak',
         lastName: ' Gautam',
         address: 'Lysalleen 526 Trekroner',
@@ -47,7 +47,7 @@ export class InMemoryDataService implements InMemoryDbService {
   }
   genId(patients: Patient[]): number {
     return patients.length > 0
-      ? Math.max(...patients.map((m) => m.patientNo)) + 1
+      ? Math.max(...patients.map((m) => m.id)) + 1
       : 11;
   }
 }

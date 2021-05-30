@@ -26,6 +26,16 @@ export class PatientService {
         catchError(this._errorhandling.handleError<Patient[]>('getPatient', []))
       );
   }
+  getPatientById(id: number): Observable<Patient> {
+    const url = `${this.apiUrl}/${id}`;
+    return this._http
+      .get<Patient>(url)
+      .pipe(
+        catchError(
+          this._errorhandling.handleError<Patient>(`getPatient id=${id}`)
+        )
+      );
+  }
   searchPatient(value: string): Observable<Patient[]> {
     if (!value.trim) {
       return of([]);

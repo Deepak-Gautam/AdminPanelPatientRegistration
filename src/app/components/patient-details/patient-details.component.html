@@ -1,1 +1,26 @@
-<p>patient-details works!</p>
+<section class="patient-details">
+    <div class="container mt-5" *ngIf="patient">
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body case-history">
+                        <h5 class="card-title">{{patient.firstName}}{{patient.lastName}}</h5>
+                        <ul>
+                            <li> <strong>Case</strong> :{{patient.reason}}</li>
+                            <li><strong>Assigned To</strong> :{{patient.assignedTo}}</li>
+                            <li> <strong>Appointment Date</strong>:{{patient.appointmentDate}}</li>
+                        </ul>
+                        <div>
+                            <h1>Case Description</h1>
+                            <p>{{patient.reason}}</p>
+                            <p>{{patient.caseDescription}}</p>
+                        </div>
+                    </div>
+                    <footer>
+                        <app-button text="Edit Information"></app-button>
+                    </footer>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

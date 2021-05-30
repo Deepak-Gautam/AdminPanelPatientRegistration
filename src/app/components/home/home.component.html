@@ -1,36 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
-<body>
-    <section class="homepage">
-        <div class="container mt-5">
-            <div class="card ">
-                <div class="card-header text-center">Entery Form</div>
-                <div class="card-body">
-                    <form [formGroup]="form" (ngSubmit)="onBtnCLick()">
-                        <div class="form-group">
-                            <label for="Code">Please enter the Code</label>
-                            <input type="text" class="form-control" formControlName="code">
-                            <p *ngIf="form.controls.code.touched 
+<section class="homepage">
+    <div class="container mt-5">
+        <div class="card ">
+            <div class="card-header text-center">Entery Form</div>
+            <div class="card-body">
+                <form [formGroup]="form" (ngSubmit)="onBtnCLick()">
+                    <div class="form-group">
+                        <label for="Code">Please enter the Code</label>
+                        <input type="text" class="form-control" formControlName="code">
+                        <p *ngIf="form.controls.code.touched 
                             && !form.controls.code.valid" class="missing-field-alert">
-                                Code is required
-                            </p>
-                        </div>
-                        <app-button type="submit" color="#19a5a2" text="Go to Dashboard"></app-button>
+                            Code is required
+                        </p>
+                    </div>
+                    <app-button type="submit" color="#19a5a2" text="Go to Dashboard"></app-button>
 
-                    </form>
-                </div>
+                </form>
             </div>
-
         </div>
-    </section>
-</body>
 
-</html>
+    </div>
+</section>

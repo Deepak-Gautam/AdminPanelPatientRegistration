@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from '../../services/patient.service';
 import { Patient } from '../../models/patient';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,7 +12,10 @@ export class DashboardComponent implements OnInit {
   isLoading: boolean = false;
   errorMessage: string = '';
   patientsList: Patient[] = [];
-  constructor(private _patientService: PatientService) {}
+  constructor(
+    private _patientService: PatientService,
+    private _route: Router
+  ) {}
 
   ngOnInit(): void {
     this.getPatientList();
@@ -28,5 +32,8 @@ export class DashboardComponent implements OnInit {
         this.isLoading = false;
       }
     );
+  }
+  getId(id: number) {
+    this._route.navigate([`/detail/${id}`]);
   }
 }
