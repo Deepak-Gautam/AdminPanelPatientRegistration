@@ -12,9 +12,10 @@ export class InMemoryDataService implements InMemoryDbService {
         patientNo: 11,
         firstName: 'Deepak',
         lastName: ' Gautam',
-        address: 'Roskilde',
+        address: 'Lysalleen 526 Trekroner',
         appointmentDate: '2021-05-12',
         assignedTo: 'Dr.Ram Krishna',
+        reason: 'Headache & Fever',
         caseDescription:
           'Mr. deepak is suffering from high fever and headache. He also have some symptioms of Covid--19',
       },
@@ -25,6 +26,18 @@ export class InMemoryDataService implements InMemoryDbService {
         address: 'Roskilde',
         appointmentDate: '2021-05-12',
         assignedTo: 'Dr.Ram Krishna',
+        reason: 'Headache & Fever',
+        caseDescription:
+          'Mr. deepak is suffering from high fever and headache. He also have some symptioms of Covid--19',
+      },
+      {
+        patientNo: 11,
+        firstName: 'Deepak',
+        lastName: ' Gautam',
+        address: 'Lysalleen 526 Trekroner',
+        appointmentDate: '2021-05-12',
+        assignedTo: 'Dr.Ram Krishna',
+        reason: 'Headache & Fever',
         caseDescription:
           'Mr. deepak is suffering from high fever and headache. He also have some symptioms of Covid--19',
       },

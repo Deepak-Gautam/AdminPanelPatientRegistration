@@ -1,0 +1,9 @@
+.patient-list {
+  .search-button {
+    height: fit-content !important;
+  }
+  li {
+    list-style: none !important;
+    text-transform: capitalize;
+  }
+}

@@ -14,6 +14,9 @@ import { ToastrModule } from "ngx-toastr";
 import { HttpClientModule } from "@angular/common/http";
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import{ InMemoryDataService} from "./services/in-memory-data.service";
+import { SearchComponent } from './components/search/search.component';
+import { PatientDetailsComponent } from './components/patient-details/patient-details.component';
+import { NewRegistrationComponent } from './components/new-registration/new-registration.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,9 @@ import{ InMemoryDataService} from "./services/in-memory-data.service";
     ButtonComponent,
     DashboardComponent,
     PageNotFoundComponent,
+    SearchComponent,
+    PatientDetailsComponent,
+    NewRegistrationComponent,
   ],
   imports: [
     BrowserModule,

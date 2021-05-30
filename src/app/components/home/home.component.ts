@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class HomeComponent implements OnInit {
   users: Entrycode[] = [];
-  isloading: boolean = true;
+  isLoading: boolean = true;
   errorMessage: string = '';
   isLoggedIn: boolean = false;
   form: FormGroup;
@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
       (error) => {
         console.error('error caught on subscribing user data');
         this.errorMessage = error;
-        this.isloading = false;
+        this.isLoading = false;
       }
     );
   }

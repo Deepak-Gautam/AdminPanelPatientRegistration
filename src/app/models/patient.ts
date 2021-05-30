@@ -5,5 +5,6 @@ export interface Patient {
   address: string;
   appointmentDate: Date;
   assignedTo: string;
+  reason: string;
   caseDescription: string;
 }

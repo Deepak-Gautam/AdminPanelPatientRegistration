@@ -8,6 +8,8 @@ import { Patient } from '../../models/patient';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
+  isLoading: boolean = false;
+  errorMessage: string = '';
   patientsList: Patient[] = [];
   constructor(private _patientService: PatientService) {}
 
@@ -16,8 +18,15 @@ export class DashboardComponent implements OnInit {
   }
 
   getPatientList(): void {
-    this._patientService
-      .getPatientList()
-      .subscribe((data) => (this.patientsList = data));
+    this._patientService.getPatientList().subscribe(
+      (data) => {
+        this.patientsList = data;
+      },
+      (error) => {
+        console.error('error caught on getting List');
+        this.errorMessage = error;
+        this.isLoading = false;
+      }
+    );
   }
 }
