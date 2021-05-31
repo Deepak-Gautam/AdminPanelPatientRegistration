@@ -6,7 +6,7 @@
                 <form [formGroup]="form" (ngSubmit)="onBtnCLick()">
                     <div class="form-group">
                         <label for="Code">Please enter the Code</label>
-                        <input type="text" class="form-control" formControlName="code">
+                        <input type="text" class="form-control" formControlName="code" id="entry-input" name="ecode">
                         <p *ngIf="form.controls.code.touched 
                             && !form.controls.code.valid" class="missing-field-alert">
                             Code is required

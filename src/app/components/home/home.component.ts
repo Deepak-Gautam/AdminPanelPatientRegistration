@@ -1,5 +1,10 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Component, OnInit, Input } from '@angular/core';
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from '@angular/forms';
 import { EntryService } from '../../services/entry.service';
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
@@ -11,22 +16,23 @@ import { Entrycode } from '../../models/entrycode';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
+  @Input() formValue = [];
   users: Entrycode[] = [];
   isLoading: boolean = true;
   errorMessage: string = '';
   isLoggedIn: boolean = false;
   form: FormGroup;
+
   constructor(
-    fb: FormBuilder,
+    private fb: FormBuilder,
     private _entryService: EntryService,
     private toastr: ToastrService,
     private router: Router
-  ) {
-    this.form = fb.group({
+  ) {}
+  ngOnInit() {
+    this.form = this.fb.group({
       code: ['', Validators.required],
     });
-  }
-  ngOnInit() {
     this.getUsers();
   }
   getUsers() {

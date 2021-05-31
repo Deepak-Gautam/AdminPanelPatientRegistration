@@ -17,7 +17,7 @@ import { InMemoryDataService } from './services/in-memory-data.service';
 import { SearchComponent } from './components/search/search.component';
 import { PatientDetailsComponent } from './components/patient-details/patient-details.component';
 import { NewRegistrationComponent } from './components/new-registration/new-registration.component';
-
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +34,7 @@ import { NewRegistrationComponent } from './components/new-registration/new-regi
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ReactiveFormsModule,
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
