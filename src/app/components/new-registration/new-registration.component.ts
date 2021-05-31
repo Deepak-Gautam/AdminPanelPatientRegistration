@@ -86,7 +86,6 @@ export class NewRegistrationComponent implements OnInit {
     }
   }
   onChange(newValue: string) {
-    console.log(newValue);
     this.patient.assignedTo = newValue;
   }
 }
