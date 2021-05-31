@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { PatientService } from '../../services/patient.service';
 import { Patient } from '../../models/patient';
 import { ActivatedRoute } from '@angular/router';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-patient-details',
@@ -12,7 +13,8 @@ export class PatientDetailsComponent implements OnInit {
   patient: Patient | undefined;
   constructor(
     private _patientService: PatientService,
-    private _route: ActivatedRoute
+    private _route: ActivatedRoute,
+    private _location: Location
   ) {}
 
   ngOnInit(): void {
@@ -24,5 +26,8 @@ export class PatientDetailsComponent implements OnInit {
       .getPatientById(id)
       .subscribe((patient) => (this.patient = patient));
     console.log(this.patient);
+  }
+  goBack() {
+    this._location.back();
   }
 }
