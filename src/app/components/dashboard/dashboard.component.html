@@ -10,9 +10,11 @@
                             <li> <strong>Case</strong> :{{patient.reason}}</li>
                             <li><strong>Assigned To</strong> :{{patient.assignedTo}}</li>
                             <li> <strong>Appointment Date</strong>:{{patient.appointmentDate}}</li>
-                            <app-button text="See Details" (onBtnCLick)="getId(patient.id)" class="button-dashboard">
-                            </app-button>
                         </ul>
+                        <div class="button-dashboard">
+                            <app-button text="See Details" (onBtnCLick)="getId(patient.id)">
+                            </app-button>
+                        </div>
 
                     </div>
                 </div>

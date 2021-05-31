@@ -36,6 +36,10 @@ export class PatientService {
         )
       );
   }
+  // updatePatient(patient: Patient): Observable<Patient> {
+  //   const url = `${this.apiUrl}/${patient.id}`;
+  //   return this._http.put<Patient>(url, patient, this.httpOptions);
+  // }
   newRegistration(patient: Patient): Observable<Patient> {
     return this._http
       .post<Patient>(this.apiUrl, patient, this.httpOptions)

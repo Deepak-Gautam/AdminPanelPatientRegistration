@@ -1,6 +1,7 @@
 @import url("../../../styles.scss");
 section.new-registration {
-  input {
+  input,
+  #assign-doctor {
     padding: 15px;
     width: 100%;
     font-size: 17px;

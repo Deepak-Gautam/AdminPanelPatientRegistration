@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 import { Patient } from '../models/patient';
+import { Doctor } from '../models/doctor';
 
 @Injectable({
   providedIn: 'root',
@@ -43,8 +44,13 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
     const users: Object = [{ id: 1 + Math.random(), code: 'sitecore123' }];
-    
-    return { patients, users };
+    const doctors: Object = [
+      { id: 1, name: 'Dr. Ram Krishna' },
+      { id: 2, name: 'Dr Baburam' },
+      { id: 3, name: 'Jone Hansen' },
+    ];
+
+    return { patients, users, doctors };
   }
   genId(patients: Patient[]): number {
     return patients.length > 0
