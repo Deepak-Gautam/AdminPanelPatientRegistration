@@ -1,4 +1,4 @@
-export interface Entrycode {
+export class Entrycode {
     id: number;
     code: string;
 }

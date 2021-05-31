@@ -7,10 +7,10 @@
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
             <div class="navbar-nav ">
-                <a class="nav-link" href="#">About Us</a>
-                <a class="nav-link" href="#" *ngIf="!checkRoute('/')" [routerLink]="['/registration']">New
+                <a class="nav-link" [routerLink]="['/about']">About Us</a>
+                <a class="nav-link" href="#" *ngIf="!checkRoute('/home')" [routerLink]="['/registration']">New
                     Registration</a>
-                <a class="nav-link" href="#" *ngIf="!checkRoute('/')" [routerLink]="['/dashboard']">
+                <a class="nav-link" href="#" *ngIf="!checkRoute('/home')" [routerLink]="['/dashboard']">
                     Dashboard</a>
             </div>
         </div>

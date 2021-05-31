@@ -1,4 +1,4 @@
-export interface Doctor {
+export class Doctor {
   id: number;
   name: string;
 }

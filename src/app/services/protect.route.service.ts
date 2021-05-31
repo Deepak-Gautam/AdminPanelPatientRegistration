@@ -11,6 +11,7 @@ export class ProtectRoute implements CanActivate {
     if (this._entryService.isLoggedIn) {
       return true;
     } else {
+      this._router.navigate(['/home']);
       return false;
     }
   }

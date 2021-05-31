@@ -13,20 +13,14 @@ import { of } from 'rxjs';
   styleUrls: ['./new-registration.component.scss'],
 })
 export class NewRegistrationComponent implements OnInit {
-  patient: Patient[] = [];
+  patient = new Patient();
+  patients: Patient[] = [];
   doctor: any = [];
-  firstName!: string;
-  lastName: string = '';
-  address!: string;
-  appointmentDate!: string;
-  assignedTo!: string;
-  reason: string = '';
-  caseDescription: string = '';
   form!: FormGroup; // variable is not null or undefined
   submitted: boolean = false;
   errorMessage: string = '';
   isLoading: boolean = false;
-  id: number = Math.random();
+  id: number = Math.trunc(Math.random() * 20) + 1;
   title!: string;
   constructor(
     private fb: FormBuilder,
@@ -50,10 +44,10 @@ export class NewRegistrationComponent implements OnInit {
     this.getDoctors();
   }
 
-  get f() {
+  get field() {
     return this.form.controls;
   }
-  getDoctors() {
+  getDoctors(): void {
     of(
       this._doctorsService.getDoctors().subscribe(
         (data) => {
@@ -72,20 +66,20 @@ export class NewRegistrationComponent implements OnInit {
     this.submitted = true;
     const data = {
       id: this.id,
-      firstName: this.firstName,
-      lastName: this.lastName,
-      address: this.address,
-      appointmentDate: this.appointmentDate,
-      assignedTo: this.assignedTo,
-      reason: this.reason,
-      caseDescription: this.caseDescription,
+      firstName: this.patient.firstName,
+      lastName: this.patient.lastName,
+      address: this.patient.address,
+      appointmentDate: this.patient.appointmentDate,
+      assignedTo: this.patient.assignedTo,
+      reason: this.patient.reason,
+      caseDescription: this.patient.caseDescription,
     };
-   
+    console.log(this.patient);
     if (this.form.invalid) {
       return;
     } else {
       this._patientService.newRegistration(data).subscribe((a) => {
-        this.patient.push(a);
+        this.patients.push(a);
         this._toastr.success('You have Successfully registered new patient');
       });
       this._router.navigate(['/dashboard']);
@@ -93,6 +87,6 @@ export class NewRegistrationComponent implements OnInit {
   }
   onChange(newValue: string) {
     console.log(newValue);
-    this.assignedTo = newValue;
+    this.patient.assignedTo = newValue;
   }
 }
